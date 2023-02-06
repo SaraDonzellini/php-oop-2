@@ -16,6 +16,8 @@ require_once __DIR__ . '/models/Product.php';
 require_once __DIR__ . '/models/Food.php';
 require_once __DIR__ . '/models/Kennel.php';
 require_once __DIR__ . '/models/Toy.php';
+require_once __DIR__ . '/models/Category.php';
+
 ?>
 
 <!DOCTYPE html>
@@ -40,11 +42,14 @@ require_once __DIR__ . '/models/Toy.php';
 
     <main class="container-lg">
         <?php
+        $cane = new Category("cane");
         // $product = new Product('nome', 3.3, 'cane');
-        $croccantini = new Food('special food', 3.3, 'cane', '1/3/2023', ['pesce', 'carne']);
-        $kennel = new Kennel('nome', 3.3, 'cane', ['stoffa'], 'xl');
-        $cordina = new Toy('nome', 3.3, 'cane', ['nylon'], 'corda');
+        $croccantini = new Food('special food', 3.3, $cane, '1/3/2023', ['pesce', 'carne']);
+        // $kennel = new Kennel('nome', 3.3, 'cane', ['stoffa'], 'xl');
+        // $cordina = new Toy('nome', 3.3, 'cane', ['nylon'], 'corda');
         // var_dump($product, $croccantini, $kennel, $cordina);
+
+
         ?>
 
 
@@ -66,7 +71,7 @@ require_once __DIR__ . '/models/Toy.php';
                         Categoria:
                     </span>
                     <span>
-                        <?php echo $croccantini->getCategory() ?>
+                        <?php echo $cane->getName() ?>
                     </span>
                 </p>
 

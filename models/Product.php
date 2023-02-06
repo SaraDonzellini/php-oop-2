@@ -7,7 +7,7 @@ class Product {
     protected $price;
     protected $category;
 
-    function __construct(String $_name, float $_price, String $_category) 
+    function __construct(String $_name, float $_price, Category $_category) 
     {
         $this->setName($_name);
         $this->setPrice($_price);
